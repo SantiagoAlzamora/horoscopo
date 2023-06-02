@@ -62,9 +62,12 @@ export async function getHoroscopo(signo: string) : Promise<IHoroscopo>{
   const weeklyData = await weekly.json()
   const monthlyData = await monthly.json()
 
-  const dailyText = await translate(dailyData.data.horoscope_data)
-  const weeklyText = await translate(weeklyData.data.horoscope_data)
-  const monthlyText = await translate(monthlyData.data.horoscope_data)
+  // const dailyText = await translate(dailyData.data.horoscope_data)
+  // const weeklyText = await translate(weeklyData.data.horoscope_data)
+  // const monthlyText = await translate(monthlyData.data.horoscope_data)
+  const dailyText = dailyData.data.horoscope_data
+  const weeklyText = weeklyData.data.horoscope_data
+  const monthlyText = monthlyData.data.horoscope_data
 
 
   return {
