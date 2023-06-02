@@ -78,40 +78,40 @@ export async function getHoroscopo(signo: string) : Promise<IHoroscopo>{
 
 }
 
-async function translate(text : string) : Promise<string>{
-  const textParts : string[] = splitText(text)
-  let finalText = ""
-  for (const text of textParts) {
-    const response = await  fetch(`https://api.mymemory.translated.net/get?q=${text}&langpair=en|es`)
-  const data = await response.json()
-  finalText += " "+  data.responseData.translatedText
-  }
-  if (finalText){
-    return finalText
-  }else{
-    return ""
-  }
-}
+// async function translate(text : string) : Promise<string>{
+//   const textParts : string[] = splitText(text)
+//   let finalText = ""
+//   for (const text of textParts) {
+//     const response = await  fetch(`https://api.mymemory.translated.net/get?q=${text}&langpair=en|es`)
+//   const data = await response.json()
+//   finalText += " "+  data.responseData.translatedText
+//   }
+//   if (finalText){
+//     return finalText
+//   }else{
+//     return ""
+//   }
+// }
 
-function splitText(text : string) : string[]{
-  const MAX_LENGTH = 500;
-  const chunks = [];
+// function splitText(text : string) : string[]{
+//   const MAX_LENGTH = 500;
+//   const chunks = [];
   
-  while (text.length > 0) {
-    if (text.length <= MAX_LENGTH) {
-      chunks.push(text);
-      break;
-    } else {
-      const chunk = text.substring(0, MAX_LENGTH);
-      const lastSpaceIndex = chunk.lastIndexOf(' ');
-      const truncatedChunk = lastSpaceIndex !== -1 ? chunk.substring(0, lastSpaceIndex) : chunk;
-      chunks.push(truncatedChunk);
-      text = text.substring(truncatedChunk.length).trim();
-    }
-  }
+//   while (text.length > 0) {
+//     if (text.length <= MAX_LENGTH) {
+//       chunks.push(text);
+//       break;
+//     } else {
+//       const chunk = text.substring(0, MAX_LENGTH);
+//       const lastSpaceIndex = chunk.lastIndexOf(' ');
+//       const truncatedChunk = lastSpaceIndex !== -1 ? chunk.substring(0, lastSpaceIndex) : chunk;
+//       chunks.push(truncatedChunk);
+//       text = text.substring(truncatedChunk.length).trim();
+//     }
+//   }
   
-  return chunks;
-}
+//   return chunks;
+// }
 
 export interface IHoroscopo {
   daily: string,
