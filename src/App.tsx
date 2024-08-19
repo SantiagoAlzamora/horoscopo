@@ -27,6 +27,7 @@ function App() {
 
     setSigno(newSigno)
     const newHoroscopo = await getHoroscopo(sign)
+    
     setHoroscopo(newHoroscopo)
     
     setLoading(false)
@@ -36,21 +37,21 @@ function App() {
 
   return (
     <main>
-      <h1>Calcula tu <span>Signo</span>, lee tu <span>Horoscopo</span></h1>
-      <form onSubmit={handleSubmit}>
+      <h1>Hola <span>Rosie💛</span>, lee tu <span>Horoscopo</span></h1>
+      {/* <form onSubmit={handleSubmit}>
         <input type="date" name="date" required={true} />
         <button>Submit</button>
       </form>
       <h2>{signo}</h2>
       <section className='buttons'>
         <button onClick={()=>setSelectedButton("daily")}>Daily</button>
-        <button onClick={()=>setSelectedButton("weekly")}>Weekly</button>
         <button onClick={()=>setSelectedButton("monthly")}>Monthly</button>
       </section>
-      {loading && <p><Loading type='spinningBubbles'/></p>}
+      {loading && <div style={{marginTop:16}}><Loading type='spinningBubbles'/></div>}
       {selectedButton === "daily" && <p>{horoscopo?.daily}</p>}
-      {selectedButton === "weekly" && <p>{horoscopo?.weekly}</p>}
-      {selectedButton === "monthly" && <p>{horoscopo?.monthly}</p>}
+      {selectedButton === "monthly" && <p>{horoscopo?.monthly}</p>} */}
+      <p>Hoy va a ser un dia donde no te vas a enojar y vas a ganar muchas partidas de mobile legends</p>
+      <p>Te queda poco para ranckear a palito silver asi que segui asi. No te enojes con Blaso, el muchacho aprecia aun que te moleste</p>
     </main>
   )
 }

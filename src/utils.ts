@@ -18,8 +18,6 @@ export function calcularSigno(date: string):string {
   const [, mes, dia] = date.split("-")
   const day = Number(dia)
   const month = Number(mes)
-  console.log({ day, month });
-
 
   const ranges = [
     { start: { month: 3, day: 21 }, end: { month: 4, day: 20 }, name: 'Aries' },
@@ -54,25 +52,27 @@ export function calcularSigno(date: string):string {
 export async function getHoroscopo(signo: string) : Promise<IHoroscopo>{
   signo = signo.toLocaleLowerCase()
   const dailyFetch = fetch(`https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${signo}&day=today`)
-  const weeklyFetch = fetch(`https://horoscope-app-api.vercel.app/api/v1/get-horoscope/weekly?sign=${signo}`)
+  
   const monthlyFetch = fetch(`https://horoscope-app-api.vercel.app/api/v1/get-horoscope/monthly?sign=${signo}`)
-  const [daily,weekly,monthly] = await Promise.all([dailyFetch,weeklyFetch,monthlyFetch])
+  
+  const [daily,monthly] = await Promise.all([dailyFetch,monthlyFetch])
   
   const dailyData = await daily.json()
-  const weeklyData = await weekly.json()
   const monthlyData = await monthly.json()
+
+  console.log(dailyData,monthlyData);
+  
+  
 
   // const dailyText = await translate(dailyData.data.horoscope_data)
   // const weeklyText = await translate(weeklyData.data.horoscope_data)
   // const monthlyText = await translate(monthlyData.data.horoscope_data)
   const dailyText = dailyData.data.horoscope_data
-  const weeklyText = weeklyData.data.horoscope_data
   const monthlyText = monthlyData.data.horoscope_data
 
 
   return {
     daily:dailyText,
-    weekly:weeklyText,
     monthly:monthlyText,
   }
 
@@ -115,7 +115,6 @@ export async function getHoroscopo(signo: string) : Promise<IHoroscopo>{
 
 export interface IHoroscopo {
   daily: string,
-  weekly: string,
   monthly: string
 }
 
