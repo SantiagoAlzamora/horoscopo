@@ -37,7 +37,7 @@ function App() {
 
   return (
     <main>
-      <h1>Hola <span>Rosie💛</span>, lee tu <span>Horoscopo</span></h1>
+      <h1>Hola <span>Linnea 💛</span>, read your <span>horoscope</span></h1>
       {/* <form onSubmit={handleSubmit}>
         <input type="date" name="date" required={true} />
         <button>Submit</button>
@@ -50,8 +50,8 @@ function App() {
       {loading && <div style={{marginTop:16}}><Loading type='spinningBubbles'/></div>}
       {selectedButton === "daily" && <p>{horoscopo?.daily}</p>}
       {selectedButton === "monthly" && <p>{horoscopo?.monthly}</p>} */}
-      <p>Hoy va a ser un dia donde no te vas a enojar y vas a ganar muchas partidas de mobile legends</p>
-      <p>Te queda poco para ranckear a palito silver asi que segui asi. No te enojes con Blaso, el muchacho aprecia aun que te moleste</p>
+      <p>Today you'll have a great day. Everything will turn out well for you</p>
+      <p>You have little left to rank 3 sticks so keep it up. You have to know that Blaso appreciates you, be patient with the boy even if he says strange things</p>
     </main>
   )
 }
