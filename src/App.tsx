@@ -38,7 +38,7 @@ function App() {
   return (
     <main>
       <h1>Hola, <span>Romi</span>, lee tu <span>Horoscopo</span></h1>
-      <p>Debes dejar de mimirte a las 5am. Hoy vas a tener un buen dia y todo va a salir joya. No queda nada, tenes que seguir metiendole. Saludos, el <span>Santi</span></p>
+      <p>Tenés que dejar de mimirte a las 5am. Saludos, te aprecia, el <span>Santi</span></p>
       {/* <form onSubmit={handleSubmit}>
         <input type="date" name="date" required={true} />
         <button>Submit</button>
